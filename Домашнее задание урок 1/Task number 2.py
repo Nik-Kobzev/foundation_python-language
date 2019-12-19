@@ -1,19 +1,19 @@
 # Пользователь вводит время в секундах. Переведите время в часы,
 # минуты и секунды и выведите в формате чч:мм:сс. Используйте форматирование строк.
 
-seconds_input = 3754 # int(input('Введите время в секундах: '))
-hours = seconds_input//3600
+seconds_input = int(input('Введите время в секундах: '))
+day = seconds_input // 86400
+hours = (seconds_input // 3600) % 24
 minutes = (seconds_input // 60) % 60
-seconds = seconds_input - hours*3600 - minutes*60
-print(hours)
-print(minutes)
-print(3754%60)
-print(seconds)
-# if hours < 10:
-#     hours = '0' + str(hours)
-# if minutes < 10:
-#     minutes = '0' + str(minutes)
-# if seconds < 10:
-#     seconds = '0' + str(seconds)
+seconds = seconds_input % 60
 
-print(f'Результат перевода секунд в формат чч:мм:сс - {str(hours).rjust(2,"0")}:{str(minutes).rjust(2,"0")}:{str(seconds).rjust(2,"0")}')
+if day == 1:
+    day_text = 'днь'
+elif 1 < day < 5:
+    day_text = 'дня'
+else:
+    day_text = 'дней'
+
+
+print(f'Результат перевода секунд в формат чч:мм:сс     - {(seconds_input // 3600):02}:{minutes:02}:{seconds:02}')
+print(f'Если нужно еще выводить и день то вот держите   - {day} {day_text}  {hours:02}:{minutes:02}:{seconds:02}')
