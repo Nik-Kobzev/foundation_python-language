@@ -1,6 +1,6 @@
 proceeds = int(input('Введите значение выручки: '))
 costs = int(input('Введите значение издержки: '))
-
+ 
 if proceeds > costs:
     print('Фирма работает на прибыль')
     print(f'Рентабельность составила: {proceeds/costs}')

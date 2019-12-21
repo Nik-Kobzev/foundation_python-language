@@ -2,7 +2,8 @@ distance_a = int(input('Введите растояние пробежки пе�
 target_b = int(input('Введите растояние, которое должен достичь спртсмен в км.: '))
 result = distance_a
 step = 0.1
-day = 1
+day = 
+
 while result < target_b:
     result = result + result * step
     day += 1
